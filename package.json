@@ -32,6 +32,7 @@
 		"flowbite-svelte": "^0.44.22",
 		"flowbite-svelte-icons": "^1.0.2",
 		"postcss": "^8.4.33",
+		"prettier": "^3.2.5",
 		"prettier-plugin-tailwindcss": "^0.5.11",
 		"publint": "^0.1.9",
 		"svelte": "^4.2.7",
@@ -42,5 +43,8 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@lottiefiles/svelte-lottie-player": "^0.3.1"
+	}
 }

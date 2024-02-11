@@ -15,7 +15,7 @@ export const handleScroll = () => {
     scrollPosition = window.scrollY;
 
     // Update backgroundColor based on the scroll position
-    backgroundColor = scrollPosition > scrollThreshold ? '#aab5d0' : 'transparent';
+    backgroundColor = scrollPosition > scrollThreshold ? '#d7e3f9' : 'transparent';
     changeNavbarColor(backgroundColor)
   };
 

@@ -7,8 +7,7 @@ export default {
   theme: {
     screens: {
       'xs': '420px',
-      'sm': '620px',
-      // => @media (min-width: 640px) { ... }
+      // => @media (min-width: 420px) { ... }
 
       'md': '768px',
       // => @media (min-width: 768px) { ... }
@@ -19,12 +18,12 @@ export default {
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
+      // '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
     container:{
       center: true,
-      padding: "1em"
+      padding: "0 8px"
     },
     colors: {
       white: "#FFFFFF",
