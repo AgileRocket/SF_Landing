@@ -1,85 +1,176 @@
 <script>
   import "../app.css";
+  import {
+    Navbar,
+    NavBrand,
+    NavLi,
+    NavUl,
+    GradientButton,
+    Dropdown,
+    DropdownItem,
+    Footer,
+    FooterCopyright,
+    FooterLinkGroup,
+    FooterLink,
+    FooterBrand,
+    FooterIcon,
+  } from "flowbite-svelte";
+  import {
+    ChevronDownOutline,
+    FacebookSolid,
+    YoutubeSolid,
+    LinkedinSolid,
+    TwitterSolid,
+  } from "flowbite-svelte-icons";
+  import NavMobile from "$lib/components/NavMobile.svelte";
+  import { navbarColor } from "$lib/stores/color";
+  import { page } from "$app/stores";
 
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-  }
-
+  // Reactive variable (update on state change)
+  $: isHomePage = $page.url.pathname === "/"; // Check if the current page is the home page
 </script>
 
-<div class="min-h-full">
-  <nav class="fixed top-0 left-0 right-0 h-20 z-10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <div class="flex items-center gap-2 flex-shrink-0 xl">
-          <img class="h-8 w-12" src="../src/lib/assets/graphics/sf_primary_logo.png" alt="ScheduleForward">
-          <span class="text-dark text-lg font-semibold mt-1">Schedule<span class="text-primary">Forward</span></span>
+<header class="relative container">
+  <Navbar
+    style="background-color: {$navbarColor}"
+    class="fixed top-0 left-0 z-20"
+  >
+    <NavBrand href="/">
+      <img
+        src="src/lib/assets/graphics/sf_primary_logo.png"
+        class="me-2 h-6"
+        alt="ScheuleForward Logo"
+      />
+      <span
+        class=" text-lg lg:text-xl self-center whitespace-nowrap font-semibold capitalize"
+        >schedule<span class="text-primary">Forward</span></span
+      >
+    </NavBrand>
+    <NavUl class="uppercase">
+      <NavLi class="flex items-center cursor-pointer">
+        resources<ChevronDownOutline
+          class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline"
+        />
+      </NavLi>
+      <Dropdown class="w-44 z-20">
+        <DropdownItem href="/demo">try it!</DropdownItem>
+        <DropdownItem href="/learn">learn</DropdownItem>
+        <DropdownItem href="/support">support</DropdownItem>
+        <DropdownItem href="/pricing">pricing</DropdownItem>
+      </Dropdown>
+      <NavLi>
+        <span class="border-r-2 border-solid border-accent"></span>
+      </NavLi>
+      <NavLi
+        href="/contact"
+        class="flex items-center text-primary hover:text-primary-medium"
+        >talk to sales</NavLi
+      >
+      <NavLi
+        ><GradientButton href="/login" color="blue" pill>Login</GradientButton
+        ></NavLi
+      >
+    </NavUl>
+    <NavMobile />
+  </Navbar>
+</header>
+<main>
+  <slot />
+</main>
+<footer class:homePage={isHomePage} class="fixed bottom-0 left-0 right-0">
+  <Footer footerType="socialmedia" class="overflow-hidden bg-primary-medium">
+    <div class="md:flex md:justify-evenly">
+      <div class="flex justify-center items-center mb-4">
+        <FooterBrand
+          href="/"
+          src="/src/lib/assets/graphics/sf_primary_logo.png"
+          alt="ScheduleForward Logo"
+          name="ScheduleForward"
+          aClass="flex md:flex-col items-center xl:scale-150"
+          spanClass="text-lg font-medium mt-2"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-3 xl:gap-20">
+        <div class="flex flex-col justify-center items-center text-center">
+          <FooterLinkGroup>
+            <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+              >try it!</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+              >pricing</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+              >schedule a demo</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+              >talk to sales</FooterLink
+            >
+          </FooterLinkGroup>
         </div>
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-4 uppercase">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">try it!</a>
-            <a href="#" class="text-primary hover:text-white hover:bg-primary rounded-md px-3 py-2 text-sm font-medium mt-1">learn</a>
-            <a href="#" class="text-primary hover:text-white hover:bg-primary rounded-md px-3 py-2 text-sm font-medium mt-1">support</a>
-            <a href="#" class="text-primary hover:text-white hover:bg-primary rounded-md px-3 py-2 text-sm font-medium mt-1">pricing</a>
-            <span class="text-primary">|</span>
-            <a href="#" class="text-primary hover:text-white hover:bg-primary rounded-md px-3 py-2 text-sm font-medium mt-1">talk to sales</a>
-          </div>
+        <div>
+          <h2 class="mb-6 font-semibold uppercase text-gray-900 md:text-start">
+            learn more
+          </h2>
+          <FooterLinkGroup>
+            <FooterLink liClass="mb-4 uppercase" href="/"
+              >video library</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase" href="/"
+              >testimonials</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase" href="/">articles</FooterLink>
+          </FooterLinkGroup>
         </div>
-
-        <!--
-                Dropdown menu, show/hide based on menu state.
-
-                Entering: "transition ease-out duration-100"
-                  From: "transform opacity-0 scale-95"
-                  To: "transform opacity-100 scale-100"
-                Leaving: "transition ease-in duration-75"
-                  From: "transform opacity-100 scale-100"
-                  To: "transform opacity-0 scale-95"
-              -->
-        
-        <div class="-mr-2 flex md:hidden">
-          <!-- Mobile menu button -->
-          <button type="button" on:click={toggleMobileMenu} id="mobile-menu-btn" class="relative inline-flex items-center justify-center rounded-md p-2 text-primary hover:bg-hover hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <!-- Menu open: "hidden", Menu closed: "block" -->
-            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <!-- Menu open: "block", Menu closed: "hidden" -->
-            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+        <div>
+          <h2
+            class="mb-6 text-sm font-semibold uppercase text-gray-900 md:text-start"
+          >
+            support
+          </h2>
+          <FooterLinkGroup>
+            <FooterLink liClass="mb-4 uppercase" href="/">about</FooterLink>
+            <FooterLink liClass="mb-4 uppercase" href="/">contact us</FooterLink
+            >
+            <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink>
+          </FooterLinkGroup>
         </div>
       </div>
     </div>
-
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="hidden" id="mobile-menu">
-      <div class="flex flex-col gap-10 space-y-1 px-2 pb-3 pt-2 sm:px-3 uppercase text-center">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">try it!</a>
-        <a href="#" class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-base font-medium">learn</a>
-        <a href="#" class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-base font-medium">support</a>
-        <a href="#" class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-base font-medium">pricing</a>
-        <a href="#" class="text-secondary hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-base font-bold">talk to sales</a>
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <div class="flex flex-col items-center justify-center">
+      <FooterCopyright href="/" by="ScheduleForward" spanClass="text-xs" />
+      <div
+        class="flex flex-row mt-4 space-x-6 rtl:space-x-reverse sm:justify-center"
+      >
+        <FooterIcon href="/">
+          <YoutubeSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+        </FooterIcon>
+        <FooterIcon href="/">
+          <LinkedinSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+        </FooterIcon>
+        <FooterIcon href="/">
+          <FacebookSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+        </FooterIcon>
+        <FooterIcon href="/">
+          <TwitterSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+        </FooterIcon>
       </div>
     </div>
-  </nav>
-</div>
+  </Footer>
+</footer>
 
+<style lang="postcss">
+  .homePage {
+    display: none;
+  }
 
-
-<slot />
-
-
-<!-- <a href="#">try it!</a>
-    <a href="#">learn</a>
-    <a href="#">support</a>
-    <a href="#">pricing</a>
-    <span>|</span>
-    <a href="#">talk to sales</a>
-    <a href="#">login</a> -->
+  @media (min-width: 768px) {
+    :global(li) {
+      display: flex !important;
+      align-items: center !important;
+    }
+    :global(ul) {
+      padding: 0 !important;
+    }
+  }
+</style>
