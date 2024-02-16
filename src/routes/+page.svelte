@@ -17,19 +17,16 @@
   import {
     ArrowRightOutline,
     QuoteSolid,
-    FacebookSolid,
     TwitterSolid,
     YoutubeSolid,
-    LinkedinSolid,
   } from "flowbite-svelte-icons";
   import { updateNavbarColor } from "$lib/stores/color";
   import { onMount } from "svelte";
 
   // Set Navbar Background Color based on scroll position
-  let parallaxContent;
   let heroContainer;
   var newScrollThreshold = 0;
-  var parallaxContentStart = 0;
+  var parallaxContentStart;
   let LottiePlayer;
   let SB_LottiePlayer;
   let SC_LottiePlayer;
@@ -48,18 +45,10 @@
 
     parallaxContentStart = heroContainerPosition.height;
     newScrollThreshold = heroContainerPosition.bottom;
-
-    // Set where parallax content slider starts
-    parallaxContent.style.top = parallaxContentStart + "px";
     updateNavbarColor(newScrollThreshold);
 
     // Set features button 1 to be active
     toggleActive(1);
-
-    // REFRESH SCREEN ON ANY WINDOW RESIZE
-    window.addEventListener("resize", () => {
-      location.reload();
-    });
   });
 
   let isActive = null;
@@ -83,12 +72,12 @@
   ];
 </script>
 
-<div class="parallax-box mx-auto">
+<div class="container mx-auto">
   <div
     class="fixed top-0 left-0 right-0 h-full bg-cover bg-no-repeat z-negative"
     style="background-image: url('src/lib/assets/backgrounds/hero_background.png');"
   ></div>
-  <div class="container fixed">
+  <div class="container fixed top-20 md:top-40">
     <section
       bind:this={heroContainer}
       class="hero flex flex-col justify-center xl:gap-4 text-center md:justify-start md:text-start z-10 w-full"
@@ -107,7 +96,7 @@
         <div class="md:flex-1 lottie hero-lottie-container flex items-center">
           {#if LottiePlayer}
             <LottiePlayer
-              src="https://lottie.host/f2786799-bf8f-44ea-842d-46fb2772b513/SSmjKMgHSX.json"
+              src="/src/lib/assets/animations/Hero Section Calendar.json"
               autoplay={true}
               loop={true}
               controls={false}
@@ -143,8 +132,7 @@
           </div>
         </div>
       </div>
-      <P
-        class="text-xs text-center md:text-start uppercase my-4 lg:my-1 lg:mt-4"
+      <P class="text-xs text-center md:text-start uppercase"
         >trusted by industry leaders</P
       >
       <div
@@ -169,8 +157,7 @@
     </section>
   </div>
   <main
-    bind:this={parallaxContent}
-    class="parallax-content left-0 right-0 z-10 lg:mt-8 shadow-xl"
+    class="parallax-content container left-0 right-0 z-10 shadow-xl"
     style="background: linear-gradient(to bottom, transparent, transparent 5%, white 5%, white;"
   >
     <div
@@ -289,7 +276,7 @@
               >
                 {#if SB_LottiePlayer}
                   <SB_LottiePlayer
-                    src="https://lottie.host/f23b85dc-8bfe-4252-97c7-d8d3ac256cc6/UZ8yysh7m3.json"
+                    src="/src/lib/assets/animations/Schedule Builder.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -316,7 +303,7 @@
               <div class="lottie sc-lottie-container flex items-center">
                 {#if SC_LottiePlayer}
                   <SC_LottiePlayer
-                    src="https://lottie.host/39fd5911-b502-4de6-864c-f452ea39e93f/LjUtxXelmT.json"
+                    src="/src/lib/assets/animations/Smart Calendar.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -345,7 +332,7 @@
               >
                 {#if SS_LottiePlayer}
                   <SS_LottiePlayer
-                    src="https://lottie.host/a1dd6489-073f-487d-86cb-cbe6bceff47e/xK8gFIePgY.json"
+                    src="/src/lib/assets/animations/Shift Swapping.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -373,7 +360,7 @@
               >
                 {#if DM_LottiePlayer}
                   <DM_LottiePlayer
-                    src="https://lottie.host/fbcc3b8b-8536-4049-9099-b9f04d35a992/adW931Jvpz.json"
+                    src="/src/lib/assets/animations/Data Management.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -464,7 +451,7 @@
               >
                 {#if SB_LottiePlayer}
                   <SB_LottiePlayer
-                    src="https://lottie.host/f23b85dc-8bfe-4252-97c7-d8d3ac256cc6/UZ8yysh7m3.json"
+                    src="/src/lib/assets/animations/Schedule Builder.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -489,7 +476,7 @@
               <div class="lottie sc-lottie-container flex items-center">
                 {#if SC_LottiePlayer}
                   <SC_LottiePlayer
-                    src="https://lottie.host/39fd5911-b502-4de6-864c-f452ea39e93f/LjUtxXelmT.json"
+                    src="/src/lib/assets/animations/Smart Calendar.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -516,7 +503,7 @@
               >
                 {#if SS_LottiePlayer}
                   <SS_LottiePlayer
-                    src="https://lottie.host/a1dd6489-073f-487d-86cb-cbe6bceff47e/xK8gFIePgY.json"
+                    src="/src/lib/assets/animations/Shift Swapping.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -542,7 +529,7 @@
               >
                 {#if DM_LottiePlayer}
                   <DM_LottiePlayer
-                    src="https://lottie.host/fbcc3b8b-8536-4049-9099-b9f04d35a992/adW931Jvpz.json"
+                    src="/src/lib/assets/animations/Data Management.json"
                     autoplay={true}
                     loop={true}
                     controls={false}
@@ -604,7 +591,7 @@
         footerType="socialmedia"
         class="overflow-hidden bg-primary-medium"
       >
-        <div class="md:flex md:justify-evenly">
+        <div class="flex flex-col md:flex-row justify-evenly">
           <div class="flex justify-center items-center mb-4">
             <FooterBrand
               href="/"
@@ -632,9 +619,9 @@
                 >
               </FooterLinkGroup>
             </div>
-            <div>
+            <div class="flex flex-col text-center md:text-start">
               <h2
-                class="mb-6 font-semibold uppercase text-gray-900 md:text-start"
+                class="mb-6 font-semibold uppercase text-gray-900 text-center md:text-start"
               >
                 learn more
               </h2>
@@ -650,9 +637,9 @@
                 >
               </FooterLinkGroup>
             </div>
-            <div>
+            <div class="flex flex-col text-center">
               <h2
-                class="mb-6 text-sm font-semibold uppercase text-gray-900 md:text-start"
+                class="mb-6 text-sm font-semibold uppercase text-gray-900 text-center md:text-start"
               >
                 support
               </h2>
@@ -668,25 +655,17 @@
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div class="flex flex-col items-center justify-center">
-          <FooterCopyright href="/" by="ScheduleForward" spanClass="text-xs" />
-          <div
-            class="flex flex-row mt-4 space-x-6 rtl:space-x-reverse sm:justify-center"
-          >
+          <FooterCopyright
+            href="/"
+            by="ScheduleForward"
+            spanClass="text-xs text-center"
+          />
+          <div class="flex flex-row mt-4 space-x-6 rtl:space-x-reverse">
             <FooterIcon href="/">
-              <YoutubeSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+              <YoutubeSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
             </FooterIcon>
             <FooterIcon href="/">
-              <LinkedinSolid
-                class="w-4 h-4 text-gray-500 hover:text-gray-900"
-              />
-            </FooterIcon>
-            <FooterIcon href="/">
-              <FacebookSolid
-                class="w-4 h-4 text-gray-500 hover:text-gray-900"
-              />
-            </FooterIcon>
-            <FooterIcon href="/">
-              <TwitterSolid class="w-4 h-4 text-gray-500 hover:text-gray-900" />
+              <TwitterSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
             </FooterIcon>
           </div>
         </div>
@@ -696,18 +675,16 @@
 </div>
 
 <style lang="postcss">
-  .parallax-box {
-    position: relative;
-    top: 4em;
-    height: 100vh;
-    z-index: 0;
+  .curved-edge {
+    @apply lg:top-[-1.65em] xl:top-[-3.4em];
   }
+
   .parallax-content {
     position: absolute;
     z-index: 2;
-    top: 200em;
     transition: 0.8s all;
     animation: 2s fadeIn;
+    @apply top-[46em] md:top-[34em] lg:top-[36em] xl:top-[40em];
   }
 
   .lottie {
@@ -740,48 +717,30 @@
     height: 200px;
   }
 
-  @media (min-width: 768px) {
-    .parallax-box {
-      top: 6em;
-    }
-
-    .hero-lottie-container {
-      transform: scale(1);
-    }
-
-    .features-link {
-      @apply text-lg;
-      @apply uppercase;
-      @apply cursor-pointer;
-      @apply rounded-2xl;
-      @apply px-4;
-      @apply py-2;
-      @apply xl:w-96;
-    }
-
-    .features-link:hover {
-      @apply text-accent;
-    }
-
-    .feature-active {
-      @apply bg-accent;
-      @apply text-white !important;
-    }
-
-    .feature-animation-active {
-      @apply block !important;
-    }
+  .hero-lottie-container {
+    @apply md:scale-100;
   }
 
-  @media (min-width: 1024px) {
-    .curved-edge {
-      top: -1.65em;
-    }
+  .features-link {
+    @apply md:text-lg;
+    @apply md:uppercase;
+    @apply md:cursor-pointer;
+    @apply md:rounded-2xl;
+    @apply md:px-4;
+    @apply md:py-2;
+    @apply xl:w-96;
   }
 
-  @media (min-width: 1280px) {
-    .curved-edge {
-      top: -3.15em;
-    }
+  .features-link:hover {
+    @apply md:text-accent;
+  }
+
+  .feature-active {
+    @apply md:bg-accent;
+    @apply md:text-white !important;
+  }
+
+  .feature-animation-active {
+    @apply block !important;
   }
 </style>

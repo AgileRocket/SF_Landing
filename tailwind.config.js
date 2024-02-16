@@ -37,7 +37,7 @@ export default {
       "primary-medium": "#A9B8D3",
       "primary-light": "#5F6163",
       "primary-lighter": "#cad1e2",
-      "primary-lightest": "#EEF2FB",
+      "primary-lightest": "#EEF2F9",
       "text-dark": "#4F504D"
     },
     fontSize: {
