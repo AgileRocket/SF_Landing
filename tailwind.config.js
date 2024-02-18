@@ -33,6 +33,8 @@ export default {
       accent: "#0264D3",
       hover: "#C9DCFF",
       focus: "#3772DD",
+      "primary-background": "#e0e9f8",
+      "primary-secondary": "#6789CB",
       "primary-dark": "#2F3136",
       "primary-medium": "#A9B8D3",
       "primary-light": "#5F6163",
