@@ -5,28 +5,14 @@
     Button,
     Card,
     Blockquote,
-    Footer,
-    FooterCopyright,
-    FooterLinkGroup,
-    FooterLink,
-    FooterBrand,
-    FooterIcon,
     AccordionItem,
     Accordion,
   } from "flowbite-svelte";
-  import {
-    ArrowRightOutline,
-    QuoteSolid,
-    TwitterSolid,
-    YoutubeSolid,
-  } from "flowbite-svelte-icons";
-  import { updateNavbarColor } from "$lib/stores/color";
+  import { ArrowRightOutline, QuoteSolid } from "flowbite-svelte-icons";
   import { onMount } from "svelte";
+  import CustomFooter from "$lib/components/CustomFooter.svelte";
 
   // Set Navbar Background Color based on scroll position
-  let heroContainer;
-  var newScrollThreshold = 0;
-  var parallaxContentStart;
   let LottiePlayer;
   let SB_LottiePlayer;
   let SC_LottiePlayer;
@@ -41,21 +27,17 @@
     SS_LottiePlayer = module.LottiePlayer;
     DM_LottiePlayer = module.LottiePlayer;
 
-    let heroContainerPosition = heroContainer.getBoundingClientRect();
-
-    parallaxContentStart = heroContainerPosition.height;
-    newScrollThreshold = heroContainerPosition.bottom;
-    updateNavbarColor(newScrollThreshold);
-
     // Set features button 1 to be active
     toggleActive(1);
   });
 
+  // Toggle selected feature button
   let isActive = null;
   const toggleActive = (button) => {
     isActive = button;
   };
 
+  // Lottie Controls
   let controlsLayout = [
     "previousFrame",
     "playpause",
@@ -74,12 +56,10 @@
 
 <div class="container mx-auto">
   <div
-    class="fixed top-0 left-0 right-0 h-full bg-cover bg-no-repeat z-negative"
-    style="background-image: url('src/lib/assets/backgrounds/hero_background.png');"
+    class="fixed top-0 left-0 right-0 h-full bg-cover bg-no-repeat z-negative bg-primary-background"
   ></div>
   <div class="container fixed top-20 md:top-40">
     <section
-      bind:this={heroContainer}
       class="hero flex flex-col justify-center xl:gap-4 text-center md:justify-start md:text-start z-10 w-full"
     >
       <Heading
@@ -587,89 +567,7 @@
     </div>
     <!-- FOOTER IS HERE ONLY FOR HOME PAGE; LAYOUT.SVELTE FOR ALL OTHER PAGES! -->
     <section class="parallax-footer relative">
-      <Footer
-        footerType="socialmedia"
-        class="overflow-hidden bg-primary-medium"
-      >
-        <div class="flex flex-col md:flex-row justify-evenly">
-          <div class="flex justify-center items-center mb-4">
-            <FooterBrand
-              href="/"
-              src="/src/lib/assets/graphics/sf_primary_logo.png"
-              alt="ScheduleForward Logo"
-              name="ScheduleForward"
-              aClass="flex md:flex-col items-center xl:scale-150"
-              spanClass="text-lg font-medium mt-2"
-            />
-          </div>
-          <div class="grid grid-cols-1 gap-10 md:grid-cols-3 xl:gap-20">
-            <div class="flex flex-col justify-center items-center text-center">
-              <FooterLinkGroup>
-                <FooterLink liClass="mb-4 uppercase text-accent" href="/"
-                  >try it!</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase text-accent" href="/"
-                  >pricing</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase text-accent" href="/"
-                  >schedule a demo</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase text-accent" href="/"
-                  >talk to sales</FooterLink
-                >
-              </FooterLinkGroup>
-            </div>
-            <div class="flex flex-col text-center md:text-start">
-              <h2
-                class="mb-6 font-semibold uppercase text-gray-900 text-center md:text-start"
-              >
-                learn more
-              </h2>
-              <FooterLinkGroup>
-                <FooterLink liClass="mb-4 uppercase" href="/"
-                  >video library</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase" href="/"
-                  >testimonials</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase" href="/"
-                  >articles</FooterLink
-                >
-              </FooterLinkGroup>
-            </div>
-            <div class="flex flex-col text-center">
-              <h2
-                class="mb-6 text-sm font-semibold uppercase text-gray-900 text-center md:text-start"
-              >
-                support
-              </h2>
-              <FooterLinkGroup>
-                <FooterLink liClass="mb-4 uppercase" href="/">about</FooterLink>
-                <FooterLink liClass="mb-4 uppercase" href="/"
-                  >contact us</FooterLink
-                >
-                <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink>
-              </FooterLinkGroup>
-            </div>
-          </div>
-        </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-        <div class="flex flex-col items-center justify-center">
-          <FooterCopyright
-            href="/"
-            by="ScheduleForward"
-            spanClass="text-xs text-center"
-          />
-          <div class="flex flex-row mt-4 space-x-6 rtl:space-x-reverse">
-            <FooterIcon href="/">
-              <YoutubeSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
-            </FooterIcon>
-            <FooterIcon href="/">
-              <TwitterSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
-            </FooterIcon>
-          </div>
-        </div>
-      </Footer>
+      <CustomFooter />
     </section>
   </main>
 </div>

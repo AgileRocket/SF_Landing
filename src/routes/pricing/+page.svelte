@@ -11,11 +11,18 @@
 </script>
 
 <section>
-  <Hero animation={"pricing"} />
+  <Hero
+    title={"simple. effective."}
+    titleAccent={[{ ignore: "", accent: "affordable." }]}
+    description={""}
+    animationData={[{ name: "pricing", width: "250", height: "350" }]}
+    sClass={"gap-5"}
+    h1Class={"lg:mt-[-1em]"}
+  />
 </section>
 
 <section class="container flex flex-col gap-[2em] px-4">
-  <h2 class="text-center text-sm lg:text-lg font-medium md:px-[11.25em]">
+  <h2 class="text-center text-sm lg:text-lg font-medium md:px-[11.25em] my-8">
     Our goal is to provide innovative and powerful<br /> scheduling solutions, all
     at an affordable rate.
   </h2>

@@ -46,7 +46,7 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div
     id="mobile-menu"
-    class="mobile-menu-background hidden fixed left-0 right-0 top-0 bottom-0 bg-primary-dark h-full"
+    class="mobile-menu-background hidden fixed left-0 right-0 top-0 bottom-0 bg-primary-background h-full"
   >
     <button
       type="button"
@@ -74,33 +74,40 @@
     >
       <a
         href="/"
-        class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        aria-current="page">try it!</a
-      >
+        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
+        on:click={toggleMobileMenu}
+        aria-current="page"
+        >try it!
+      </a>
       <a
         href="/"
-        class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        >learn</a
-      >
+        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
+        on:click={toggleMobileMenu}
+        >learn
+      </a>
+      <a
+        href="/about"
+        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
+        on:click={toggleMobileMenu}
+        >support
+      </a>
+      <a
+        href="/pricing"
+        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
+        on:click={toggleMobileMenu}
+        >pricing
+      </a>
       <a
         href="/"
-        class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        >support</a
-      >
-      <a
-        href="/"
-        class="text-gray-300 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        >pricing</a
-      >
-      <a
-        href="/"
-        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"
-        >talk to sales</a
-      >
+        class="text-green-500 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"
+        on:click={toggleMobileMenu}
+        >talk to sales
+      </a>
       <Button
         href="/"
         color="blue"
-        class="rounded-2xl uppercase text-white w-full mx-auto">login</Button
+        class="rounded-2xl uppercase text-white w-full mx-auto"
+        on:click={toggleMobileMenu}>login</Button
       >
     </div>
   </div>
