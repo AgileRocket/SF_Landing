@@ -1,12 +1,7 @@
 <script>
   import Hero from "$lib/components/Hero.svelte";
-  import { Input, Label, Helper, Button, Checkbox, A } from "flowbite-svelte";
-
-  const initCalendlyWidget = () => {
-    Calendly.initPopupWidget({
-      url: "https://calendly.com/scheduleforward/sf-demo?hide_gdpr_banner=1&primary_color=0264d3",
-    });
-  };
+  import Calendly from "$lib/components/Calendly.svelte";
+  import { Input, Label, Button, Checkbox, A } from "flowbite-svelte";
 </script>
 
 <section>
@@ -22,28 +17,12 @@
 
 <div class="container flex flex-col gap-y-8">
   <section class="flex flex-col justify-center items-center pb-10 px-1">
-    <p class="text-sm md:text-lg text-center font-medium">
+    <p class="text-sm md:text-lg text-center font-medium mb-3">
       Ready to schedule a live demo and discussion? Let's make it happen!
     </p>
-
-    <!-- Calendly link widget begin -->
-    <link
-      href="https://assets.calendly.com/assets/external/widget.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://assets.calendly.com/assets/external/widget.js"
-      type="text/javascript"
-      async
-    ></script>
-
-    <button
-      class="bg-accent px-8 py-2 mt-4 text-sm md:text-xl text-white rounded-3xl"
-      on:click={initCalendlyWidget}>Request Live Demo</button
-    >
-    <!-- Calendly link widget end -->
+    <Calendly />
     <p
-      class="text-center text-xs mt-5 md:text-sm md:px-16 lg:px-48 xl:px-64 lg:my-8 text-gray-400"
+      class="text-center text-xs mt-5 md:px-16 lg:px-48 xl:px-64 lg:my-8 text-gray-400"
     >
       You can also reach us at <a class="text-accent" href="tel:"
         >(877) 885-5590</a
@@ -51,7 +30,7 @@
     </p>
   </section>
 
-  <section class="mx-1 mb-10 md:mx-20">
+  <section class="mb-10 md:w-[60%] mx-auto">
     <form>
       <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
@@ -87,14 +66,14 @@
           />
         </div>
         <div>
-          <Label for="providers" class="mb-2"
-            >Number of providers you would like to schedule.
+          <Label for="providers" class="mb-2 text-xs"
+            >Number of providers to schedule.
           </Label>
           <Input type="number" id="providers" placeholder="" required />
         </div>
         <div>
-          <Label for="locations" class="mb-2"
-            >Number of hospitals / locations you staff.
+          <Label for="locations" class="mb-2 text-xs"
+            >Number of hospitals / locations staffed.
           </Label>
           <Input type="number" id="hospitals" placeholder="" required />
         </div>

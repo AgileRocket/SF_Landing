@@ -11,6 +11,7 @@
   import { ArrowRightOutline, QuoteSolid } from "flowbite-svelte-icons";
   import { onMount } from "svelte";
   import CustomFooter from "$lib/components/CustomFooter.svelte";
+  import Calendly from "$lib/components/Calendly.svelte";
 
   // Set Navbar Background Color based on scroll position
   let LottiePlayer;
@@ -88,27 +89,23 @@
             />
           {/if}
         </div>
-        <div class="md:flex-1 my-6">
+        <div class="md:flex-1 block my-6 w-full">
           <h2
             class="text-sm text-center md:text-start capitalize leading-7 mb-6"
           >
             A revolutionary Approach to scheduling, Inspired by Physicians for
             Physicians.
           </h2>
-          <div class="flex flex-col gap-2 md:flex-row md:mt-10">
+          <div
+            class="flex flex-col items-center gap-2 md:flex-row md:mt-10 w-full"
+          >
             <Button
               href="/"
               color="blue"
-              class="rounded-2xl font-semibold uppercase text-white px-0 flex-1"
+              class="rounded-2xl font-semibold uppercase text-white w-full md:w-[40%]"
               >try it!</Button
             >
-            <Button
-              href="/contact"
-              class="capitalize text-accent ring-transparent ring-2 hover:ring-accent transition-all px-0 flex-1"
-              border
-              >schedule a demo
-              <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
-            </Button>
+            <Calendly />
           </div>
         </div>
       </div>
