@@ -1,7 +1,7 @@
 <script>
   import Hero from "$lib/components/Hero.svelte";
   import { Card } from "flowbite-svelte";
-  import { reviewsData } from "$lib/stores/reviewsDataStore";
+  import { reviewsData, avatars } from "$lib/stores/reviewsDataStore";
   import {
     UserDoctorSolid,
     UserGearSolid,
@@ -41,11 +41,11 @@
           <figcaption
             class="flex justify-center items-center space-x-3 rtl:space-x-reverse"
           >
-            {#if review.avatar === "physician"}
+            {#if review.avatar === avatars.physician}
               <UserDoctorSolid size="40" color="#0264D3" />
-            {:else if review.avatar === "admin"}
+            {:else if review.avatar === avatars.admin}
               <UserGearSolid size="40" color="#0264D3" />
-            {:else if review.avatar === "nurse"}
+            {:else if review.avatar === avatars.nurse}
               <UserNurseSolid size="40" color="#0264D3" />
             {/if}
             <div class="space-y-0.5 font-medium text-left">

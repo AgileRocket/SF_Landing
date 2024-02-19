@@ -33,10 +33,7 @@
           <FooterLink liClass="mb-4 uppercase text-accent" href="/pricing"
             >pricing</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase text-accent" href="/"
-            >schedule a demo</FooterLink
-          >
-          <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+          <FooterLink liClass="mb-4 uppercase text-accent" href="/contact"
             >talk to sales</FooterLink
           >
         </FooterLinkGroup>
@@ -51,7 +48,8 @@
           <FooterLink liClass="mb-4 uppercase" href="/"
             >video library</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase" href="/">testimonials</FooterLink
+          <FooterLink liClass="mb-4 uppercase" href="/reviews"
+            >reviews</FooterLink
           >
           <FooterLink liClass="mb-4 uppercase" href="/">articles</FooterLink>
         </FooterLinkGroup>
@@ -64,7 +62,9 @@
         </h2>
         <FooterLinkGroup class="text-center md:text-start">
           <FooterLink liClass="mb-4 uppercase" href="/about">about</FooterLink>
-          <FooterLink liClass="mb-4 uppercase" href="/">contact us</FooterLink>
+          <FooterLink liClass="mb-4 uppercase" href="/contact"
+            >contact us</FooterLink
+          >
           <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink>
         </FooterLinkGroup>
       </div>
