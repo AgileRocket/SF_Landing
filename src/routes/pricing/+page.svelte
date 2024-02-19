@@ -42,8 +42,8 @@
         <p class="text-[#25F168] text-[.8rem] md:text-[1rem] font-semibold">
           1 <span class="uppercase underline">month free</span> with annual billing
         </p>
-        <button type="button" class="contact-sales-btn mt-auto"
-          >contact sales</button
+        <a type="button" class="contact-sales-btn mt-auto" href="/contact"
+          >contact sales</a
         >
       </div>
     </div>
@@ -63,8 +63,8 @@
         <p class="text-black text-[.8rem] md:text-[1rem] capitalize font-bold">
           educational + government
         </p>
-        <button type="button" class="contact-sales-btn mt-auto"
-          >contact sales</button
+        <a type="button" class="contact-sales-btn mt-auto" href="/contact"
+          >contact sales</a
         >
       </div>
     </div>
@@ -86,7 +86,9 @@
         >
           Looking for a customized solution?<br />We got you covered!
         </h3>
-        <button type="button" class="contact-sales-btn">contact sales</button>
+        <a type="button" class="contact-sales-btn" href="/contact"
+          >contact sales</a
+        >
       </div>
     </div>
   </div>

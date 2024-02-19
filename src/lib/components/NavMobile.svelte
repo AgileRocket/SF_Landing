@@ -84,7 +84,7 @@
         </a>
       {/each}
       <a
-        href="/"
+        href="/contact"
         class="text-green-500 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"
         on:click={toggleMobileMenu}
         >talk to sales

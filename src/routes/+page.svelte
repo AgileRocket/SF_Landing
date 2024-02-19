@@ -103,7 +103,7 @@
               >try it!</Button
             >
             <Button
-              href="/"
+              href="/contact"
               class="capitalize text-accent ring-transparent ring-2 hover:ring-accent transition-all px-0 flex-1"
               border
               >schedule a demo
@@ -558,9 +558,9 @@
             </figcaption>
           </figure>
           <a
-            href="/"
+            href="/reviews"
             class="mb-6 mx-auto text-xs sm:px-16 capitalize text-accent underline"
-            >see more testimonies</a
+            >see more testimonials</a
           >
         </div>
       </section>
