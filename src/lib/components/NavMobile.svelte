@@ -1,6 +1,6 @@
 <script>
-  import "/src/app.css";
   import { Button } from "flowbite-svelte";
+  import { menuResources } from "$lib/stores/navDataStore";
 
   function toggleMobileMenu() {
     const menu = document.getElementById("mobile-menu");
@@ -8,6 +8,9 @@
     menu.classList.toggle("hidden");
     mobileMenuBtn.classList.toggle("hidden");
   }
+
+  export let menuData;
+  $: menuData = $menuResources;
 </script>
 
 <nav class="overflow-hidden z-10 md:hidden">
@@ -70,33 +73,16 @@
       </svg>
     </button>
     <div
-      class="flex flex-col gap-10 space-y-1 pt-20 px-2 pb-3 sm:px-3 uppercase text-center h-full"
+      class="flex flex-col gap-y-8 space-y-1 pt-2 px-2 pb-3 sm:px-3 uppercase text-center h-full"
     >
-      <a
-        href="/"
-        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        on:click={toggleMobileMenu}
-        aria-current="page"
-        >try it!
-      </a>
-      <a
-        href="/"
-        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        on:click={toggleMobileMenu}
-        >learn
-      </a>
-      <a
-        href="/about"
-        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        on:click={toggleMobileMenu}
-        >support
-      </a>
-      <a
-        href="/pricing"
-        class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-medium"
-        on:click={toggleMobileMenu}
-        >pricing
-      </a>
+      {#each menuData as menuItem}
+        <a
+          href={menuItem.href}
+          class="text-accent hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"
+          on:click={toggleMobileMenu}
+          >{menuItem.name}
+        </a>
+      {/each}
       <a
         href="/"
         class="text-green-500 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"

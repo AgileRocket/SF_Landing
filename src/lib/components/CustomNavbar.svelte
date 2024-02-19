@@ -5,11 +5,14 @@
     NavLi,
     NavUl,
     GradientButton,
-    Dropdown,
-    DropdownItem,
+    MegaMenu,
   } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import NavMobile from "$lib/components/NavMobile.svelte";
+  import { menuResources } from "$lib/stores/navDataStore";
+
+  export let menuData;
+  $: menuData = $menuResources;
 </script>
 
 <Navbar class="fixed top-0 left-0 z-20 bg-primary-background">
@@ -30,12 +33,14 @@
         class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline"
       />
     </NavLi>
-    <Dropdown class="w-44 z-20 dropdown-container">
-      <DropdownItem class="w-full" href="/demo">try it!</DropdownItem>
-      <DropdownItem class="w-full" href="/learn">learn</DropdownItem>
-      <DropdownItem class="w-full" href="/about">support</DropdownItem>
-      <DropdownItem class="w-full" href="/pricing">pricing</DropdownItem>
-    </Dropdown>
+    <MegaMenu items={menuData} let:item>
+      <a href={item.href} class="block p-3 rounded-lg hover:bg-gray-50 h-full">
+        <div class="font-semibold dark:text-white">{item.name}</div>
+        <span class="text-sm font-light text-gray-500 capitalize"
+          >{item.help}</span
+        >
+      </a>
+    </MegaMenu>
     <NavLi>
       <span class="border-r-2 border-solid border-accent"></span>
     </NavLi>
