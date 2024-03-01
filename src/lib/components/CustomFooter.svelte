@@ -45,13 +45,13 @@
           learn more
         </h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4 uppercase" href="/videos"
+          <FooterLink liClass="mb-4 uppercase" href="/home/videos"
             >video library</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase" href="/reviews"
+          <FooterLink liClass="mb-4 uppercase" href="/home/reviews"
             >reviews</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase" href="/articles"
+          <FooterLink liClass="mb-4 uppercase" href="/home/articles"
             >articles</FooterLink
           >
         </FooterLinkGroup>
@@ -63,8 +63,10 @@
           support
         </h2>
         <FooterLinkGroup class="text-center md:text-start">
-          <FooterLink liClass="mb-4 uppercase" href="/about">about</FooterLink>
-          <FooterLink liClass="mb-4 uppercase" href="/contact"
+          <FooterLink liClass="mb-4 uppercase" href="/home/about"
+            >about</FooterLink
+          >
+          <FooterLink liClass="mb-4 uppercase" href="/home/contact"
             >contact us</FooterLink
           >
           <!-- <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink> -->
@@ -80,10 +82,10 @@
       spanClass="text-xs text-center"
     />
     <div class="flex flex-row mt-4 space-x-6 rtl:space-x-reverse">
-      <FooterIcon href="/">
+      <FooterIcon href="/home">
         <YoutubeSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
       </FooterIcon>
-      <FooterIcon href="/">
+      <FooterIcon href="/home">
         <TwitterSolid class="w-8 h-8 text-gray-500 hover:text-gray-900" />
       </FooterIcon>
     </div>
