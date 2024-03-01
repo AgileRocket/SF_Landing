@@ -1,5 +1,6 @@
 import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,8 +12,14 @@ const config = {
     files: {
       lib: 'src/lib',
     },
+    alias: { 'lib/': './src/routes/lib/' }
   },
-  preprocess: vitePreprocess(),
+  preprocess: vitePreprocess()
 };
 
-export default config;
+export default {
+  preprocess: preprocess({
+    postcss: true,
+  }),
+  config
+};
