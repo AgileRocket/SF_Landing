@@ -38,7 +38,7 @@
           >
             <a
               class="flex items-center gap-x-4 text-accent text-sm font-semi-bold"
-              href="/articles"
+              href="/home/articles"
             >
               <FontAwesomeIcon icon={faArrowLeftLong} />
               All Articles

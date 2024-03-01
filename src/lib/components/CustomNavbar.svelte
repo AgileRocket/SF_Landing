@@ -27,7 +27,7 @@
 </script>
 
 <Navbar class="fixed top-0 left-0 z-20 bg-primary-background">
-  <NavBrand href="/">
+  <NavBrand href="/home">
     <img
       src="/src/lib/assets/graphics/sf_primary_logo.png"
       class="me-2 h-6"
@@ -69,7 +69,7 @@
       <span class="border-r-2 border-solid border-accent"></span>
     </NavLi>
     <NavLi
-      href="/contact"
+      href="/home/contact"
       class="flex items-center text-primary hover:text-primary-medium"
       >talk to sales</NavLi
     >
