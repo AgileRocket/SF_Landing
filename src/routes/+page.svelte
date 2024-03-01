@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {
     Heading,
     P,
@@ -7,6 +7,7 @@
     Blockquote,
     AccordionItem,
     Accordion,
+    Tooltip,
   } from "flowbite-svelte";
   import { ArrowRightOutline, QuoteSolid } from "flowbite-svelte-icons";
   import { onMount } from "svelte";
@@ -14,11 +15,11 @@
   import Calendly from "$lib/components/Calendly.svelte";
 
   // Set Navbar Background Color based on scroll position
-  let LottiePlayer;
-  let SB_LottiePlayer;
-  let SC_LottiePlayer;
-  let SS_LottiePlayer;
-  let DM_LottiePlayer;
+  let LottiePlayer: any;
+  let SB_LottiePlayer: any;
+  let SC_LottiePlayer: any;
+  let SS_LottiePlayer: any;
+  let DM_LottiePlayer: any;
 
   onMount(async () => {
     const module = await import("@lottiefiles/svelte-lottie-player");
@@ -33,8 +34,8 @@
   });
 
   // Toggle selected feature button
-  let isActive = null;
-  const toggleActive = (button) => {
+  let isActive: number | null = null;
+  const toggleActive = (button: number) => {
     isActive = button;
   };
 
@@ -74,7 +75,9 @@
         by advanced AI
       </Heading>
       <div class="md:flex md:flex-row-reverse">
-        <div class="md:flex-1 lottie hero-lottie-container flex items-center">
+        <div
+          class="md:flex-1 lottie hero-lottie-container flex items-center mt-[-1em]"
+        >
           {#if LottiePlayer}
             <LottiePlayer
               src="/src/lib/assets/animations/Hero Section Calendar.json"
@@ -100,11 +103,11 @@
             class="flex flex-col items-center gap-2 md:flex-row md:mt-10 w-full"
           >
             <Button
-              href="/"
               color="blue"
-              class="rounded-2xl font-semibold uppercase text-white w-full md:w-[40%]"
+              class="rounded-2xl font-semibold uppercase text-white w-full md:w-[40%] cursor-default"
               >try it!</Button
             >
+            <Tooltip color="blue" placement={"bottom"}>Coming Soon</Tooltip>
             <Calendly />
           </div>
         </div>
@@ -571,7 +574,7 @@
 
 <style lang="postcss">
   .curved-edge {
-    @apply lg:top-[-1.65em] xl:top-[-3.4em];
+    @apply top-0 lg:top-[-1.65em] xl:top-[-3.4em];
   }
 
   .parallax-content {
@@ -632,10 +635,10 @@
 
   .feature-active {
     @apply md:bg-accent;
-    @apply md:text-white !important;
+    @apply md:text-white;
   }
 
   .feature-animation-active {
-    @apply block !important;
+    @apply block;
   }
 </style>

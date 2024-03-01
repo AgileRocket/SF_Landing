@@ -2,12 +2,12 @@
   import { onMount } from "svelte";
 
   export let title: string;
-  export let titleAccent;
+  export let titleAccent: any;
   export let description: string;
-  export let animationData;
+  export let animationData: any;
   export let sClass: string;
   export let h1Class: string;
-  let LottiePlayerHero;
+  let LottiePlayerHero: any;
 
   let controlsLayout = [
     "previousFrame",
@@ -30,51 +30,56 @@
   });
 </script>
 
-<div class="hero-container bg-primary-background z-0">
-  <div
-    class="container flex flex-col lg:flex-row justify-center items-center pt-16 {sClass}"
-  >
-    <div>
-      <h1
-        class="text-2xl md:text-4xl text-center lg:text-start text-white font-medium capitalize {h1Class}"
-      >
-        <span style="filter:drop-shadow(0 0 2px #0264D3)">
-          {title}
-          <br />
-          {titleAccent[0].ignore}</span
-        ><span class=" text-accent capitalize" style="filter:none"
-          >{titleAccent[0].accent}</span
-        >
-      </h1>
-      {#if description !== ""}
-        <p
-          class=" text-primary text-center lg:text-start text-xs md:text-sm leading-5 md:leading-7 pt-4"
-        >
-          {description}
-        </p>
-      {/if}
-    </div>
+<span class="hero-wrapper">
+  <div class="hero-container bg-primary-background z-0">
     <div
-      class="flex justify-center lottie w-48 lg:w-auto h-[14em] lg:h-auto mt-[-5em] lg:mt-0"
+      class="container flex flex-col lg:flex-row justify-center items-center pt-16 {sClass}"
     >
-      {#if LottiePlayerHero && animationData}
-        <LottiePlayerHero
-          src="/src/lib/assets/animations/{animationData[0].name}.json"
-          autoplay={true}
-          loop={true}
-          controls={false}
-          renderer="svg"
-          background="transparent"
-          width={animationData[0].width}
-          height={animationData[0].height}
-          {controlsLayout}
-        />
-      {/if}
+      <div>
+        <h1
+          class="text-2xl md:text-4xl text-center lg:text-start text-white font-medium capitalize {h1Class}"
+        >
+          <span style="filter:drop-shadow(0 0 2px #0264D3)">
+            {title}
+            <br />
+            {titleAccent[0].ignore}</span
+          ><span class=" text-accent capitalize" style="filter:none"
+            >{titleAccent[0].accent}</span
+          >
+        </h1>
+        {#if description !== ""}
+          <p
+            class=" text-primary text-center lg:text-start text-xs md:text-sm leading-5 md:leading-7 pt-4"
+          >
+            {description}
+          </p>
+        {/if}
+      </div>
+      <div
+        class="flex justify-center lottie w-48 lg:w-auto h-[14em] lg:h-auto mt-[-5em] lg:mt-0"
+      >
+        {#if LottiePlayerHero && animationData}
+          <LottiePlayerHero
+            src="/src/lib/assets/animations/{animationData[0].name}.json"
+            autoplay={true}
+            loop={true}
+            controls={false}
+            renderer="svg"
+            background="transparent"
+            width={animationData[0].width}
+            height={animationData[0].height}
+            {controlsLayout}
+          />
+        {/if}
+      </div>
     </div>
   </div>
-</div>
+</span>
 
 <style lang="postcss">
+  .hero-wrapper {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)) !important;
+  }
   .hero-container {
     clip-path: ellipse(80% 90% at 50% 2%);
   }

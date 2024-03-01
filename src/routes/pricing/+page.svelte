@@ -10,166 +10,175 @@
   } from "flowbite-svelte";
 </script>
 
-<section>
-  <Hero
-    title={"simple. effective."}
-    titleAccent={[{ ignore: "", accent: "affordable." }]}
-    description={""}
-    animationData={[{ name: "pricing", width: "250", height: "350" }]}
-    sClass={"gap-5"}
-    h1Class={"lg:mt-[-1em]"}
-  />
-</section>
+<div class="page-body">
+  <section>
+    <Hero
+      title={"simple. effective."}
+      titleAccent={[{ ignore: "", accent: "affordable." }]}
+      description={""}
+      animationData={[{ name: "pricing", width: "250", height: "350" }]}
+      sClass={"gap-5"}
+      h1Class={"lg:mt-[-1em]"}
+    />
+  </section>
 
-<section class="container flex flex-col gap-[2em] px-4">
-  <h2 class="text-center text-sm lg:text-lg font-medium md:px-[11.25em] my-8">
-    Our goal is to provide innovative and powerful<br /> scheduling solutions, all
-    at an affordable rate.
-  </h2>
-  <div class="price-tags-container">
-    <div class="price-tag">
-      <p
-        class="flex items-center text-[8rem] md:text-[9.375rem] font-semibold md:font-bold text-white leading-[1]"
-      >
-        <span class="text-[5rem] md:text-[6.25]">$</span>15
-      </p>
+  <section class="container flex flex-col gap-[2em] px-4">
+    <h2 class="text-center text-sm lg:text-lg font-medium md:px-[11.25em] my-8">
+      Our goal is to provide innovative and powerful<br /> scheduling solutions,
+      all at an affordable rate.
+    </h2>
+    <div class="price-tags-container">
+      <div class="price-tag">
+        <p
+          class="flex items-center text-[8rem] md:text-[9.375rem] font-semibold md:font-bold text-white leading-[1]"
+        >
+          <span class="text-[5rem] md:text-[6.25]">$</span>15
+        </p>
+        <div
+          class="flex-grow lg:flex-grow-0 flex flex-col md:justify-between md:h-[8.5em] md:ms-[2.5em]"
+        >
+          <p class="text-white text-[1rem] md:text-[1.5rem]">
+            USD per user, per month
+          </p>
+          <p class="text-[#25F168] text-[.8rem] md:text-[1rem] font-semibold">
+            1 <span class="uppercase underline">month free</span> with annual billing
+          </p>
+          <a type="button" class="contact-sales-btn mt-auto" href="/contact"
+            >contact sales</a
+          >
+        </div>
+      </div>
+
+      <div class="price-tag">
+        <p
+          class="flex items-center text-[8rem] md:text-[9.375rem] font-semibold md:font-bold text-white leading-[1]"
+        >
+          <span class="text-[5rem] md:text-[6.25]">$</span>10
+        </p>
+        <div
+          class="flex-grow lg:flex-grow-0 flex flex-col md:justify-between md:h-[8.5em] md:ms-[2.5em]"
+        >
+          <p class="text-white text-[1rem] md:text-[1.5rem]">
+            USD per user, per month
+          </p>
+          <p
+            class="text-black text-[.8rem] md:text-[1rem] capitalize font-bold"
+          >
+            educational + government
+          </p>
+          <a type="button" class="contact-sales-btn mt-auto" href="/contact"
+            >contact sales</a
+          >
+        </div>
+      </div>
       <div
-        class="flex-grow lg:flex-grow-0 flex flex-col md:justify-between md:h-[8.5em] md:ms-[2.5em]"
+        class="custom-tag flex flex-col md:flex-row justify-center items-center gap-5 w-full h-[14em]"
       >
-        <p class="text-white text-[1rem] md:text-[1.5rem]">
-          USD per user, per month
-        </p>
-        <p class="text-[#25F168] text-[.8rem] md:text-[1rem] font-semibold">
-          1 <span class="uppercase underline">month free</span> with annual billing
-        </p>
-        <a type="button" class="contact-sales-btn mt-auto" href="/contact"
-          >contact sales</a
-        >
+        <div class="hidden md:block w-[27em] mt-[-1.5em]">
+          <img
+            src="/src/lib/assets/graphics/money_gears_graphic.svg"
+            alt="Gears Graphic"
+          />
+        </div>
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <h2 class="text-[2.1rem] text-white capitalize font-semibold">
+            custom tailored
+          </h2>
+          <h3
+            class="text-[1rem] text-white text-center md:text-start font-normal leading-[200%]"
+          >
+            Looking for a customized solution?<br />We got you covered!
+          </h3>
+          <a type="button" class="contact-sales-btn" href="/contact"
+            >contact sales</a
+          >
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="price-tag">
-      <p
-        class="flex items-center text-[8rem] md:text-[9.375rem] font-semibold md:font-bold text-white leading-[1]"
-      >
-        <span class="text-[5rem] md:text-[6.25]">$</span>10
-      </p>
-      <div
-        class="flex-grow lg:flex-grow-0 flex flex-col md:justify-between md:h-[8.5em] md:ms-[2.5em]"
-      >
-        <p class="text-white text-[1rem] md:text-[1.5rem]">
-          USD per user, per month
-        </p>
-        <p class="text-black text-[.8rem] md:text-[1rem] capitalize font-bold">
-          educational + government
-        </p>
-        <a type="button" class="contact-sales-btn mt-auto" href="/contact"
-          >contact sales</a
-        >
-      </div>
-    </div>
-    <div
-      class="custom-tag flex flex-col md:flex-row justify-center items-center gap-5 w-full h-[14em]"
-    >
-      <div class="hidden md:block w-[27em] mt-[-1.5em]">
-        <img
-          src="/src/lib/assets/graphics/money_gears_graphic.svg"
-          alt="Gears Graphic"
-        />
-      </div>
-      <div class="flex flex-col items-center md:items-start gap-2">
-        <h2 class="text-[2.1rem] text-white capitalize font-semibold">
-          custom tailored
-        </h2>
-        <h3
-          class="text-[1rem] text-white text-center md:text-start font-normal leading-[200%]"
-        >
-          Looking for a customized solution?<br />We got you covered!
-        </h3>
-        <a type="button" class="contact-sales-btn" href="/contact"
-          >contact sales</a
-        >
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  class="container md:w-[50em] bg-primary-lightest rounded-3xl py-8 px-6 my-[2.5em]"
->
-  <Table noborder={true} divClass="transparent">
-    <TableHead>
-      <TableHeadCell
-        ><h2 class="text-[1.4rem] md:text-[1.75rem] leading-4">
-          What's Included?
-        </h2>
-        <br />
-        <p class="text-[0.65rem] md:text-[1rem] md:font-normal">
-          Just some of the incentivizing features we provide
-        </p>
-      </TableHeadCell>
-    </TableHead>
-    <TableBody tableBodyClass="text-[0.7rem]">
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >AI Schedule Builder<span class="checkmark"></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Drafts & Manual Schedule Builders<span class="checkmark"
-          ></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >World class lottery system<span class="checkmark"
-          ></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Smart Shift AI Generator (coming soon)<span class="checkmark"
-          ></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Smart Calendar Syncing<span class="checkmark"></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Easy-to-use trades and shift splitting<span class="checkmark"
-          ></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Data Analytics<span class="checkmark"></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Read-Only & Admin Users<span class="checkmark"></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Mobile App (coming soon)<span class="checkmark"
-          ></span></TableBodyCell
-        >
-      </TableBodyRow>
-      <TableBodyRow>
-        <TableBodyCell tdClass="flex justify-between"
-          >Live support<span class="checkmark"></span></TableBodyCell
-        >
-      </TableBodyRow>
-    </TableBody>
-  </Table>
-</section>
+  <section
+    class="container md:w-[50em] bg-primary-lightest rounded-3xl py-8 px-6 my-[2.5em]"
+  >
+    <Table noborder={true} divClass="transparent">
+      <TableHead>
+        <TableHeadCell
+          ><h2 class="text-[1.4rem] md:text-[1.75rem] leading-4">
+            What's Included?
+          </h2>
+          <br />
+          <p class="text-[0.65rem] md:text-[1rem] md:font-normal">
+            Just some of the incentivizing features we provide
+          </p>
+        </TableHeadCell>
+      </TableHead>
+      <TableBody tableBodyClass="text-[0.7rem]">
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >AI Schedule Builder<span class="checkmark"></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Drafts & Manual Schedule Builders<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >World class lottery system<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Smart Shift AI Generator (coming soon)<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Smart Calendar Syncing<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Easy-to-use trades and shift splitting<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Data Analytics<span class="checkmark"></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Read-Only & Admin Users<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Mobile App (coming soon)<span class="checkmark"
+            ></span></TableBodyCell
+          >
+        </TableBodyRow>
+        <TableBodyRow>
+          <TableBodyCell tdClass="flex justify-between"
+            >Live support<span class="checkmark"></span></TableBodyCell
+          >
+        </TableBodyRow>
+      </TableBody>
+    </Table>
+  </section>
+</div>
 
 <style lang="postcss">
+  .page-body {
+    animation: 2s fadeIn;
+  }
   .price-tags-container {
     @apply flex;
     @apply flex-col;

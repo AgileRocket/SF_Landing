@@ -11,6 +11,17 @@
   import NavMobile from "$lib/components/NavMobile.svelte";
   import { menuResources } from "$lib/stores/navDataStore";
 
+  import { FontAwesomeIcon } from "@fortawesome/svelte-fontawesome";
+  import {
+    faLaptop,
+    faTag,
+    faCircleInfo,
+    faComment,
+    faCirclePlay,
+    faPaperclip,
+  } from "@fortawesome/free-solid-svg-icons";
+  import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
+
   export let menuData;
   $: menuData = $menuResources;
 </script>
@@ -18,7 +29,7 @@
 <Navbar class="fixed top-0 left-0 z-20 bg-primary-background">
   <NavBrand href="/">
     <img
-      src="src/lib/assets/graphics/sf_primary_logo.png"
+      src="/src/lib/assets/graphics/sf_primary_logo.png"
       class="me-2 h-6"
       alt="ScheuleForward Logo"
     />
@@ -35,6 +46,19 @@
     </NavLi>
     <MegaMenu items={menuData} let:item>
       <a href={item.href} class="block p-3 rounded-lg hover:bg-gray-50 h-full">
+        {#if item.icon == "faLaptop"}
+          <FontAwesomeIcon icon={faLaptop} />
+        {:else if item.icon === "faTag"}
+          <FontAwesomeIcon icon={faTag} />
+        {:else if item.icon === "faCircleInfo"}
+          <FontAwesomeIcon icon={faCircleInfo} />
+        {:else if item.icon === "faComment"}
+          <FontAwesomeIcon icon={faComment} />
+        {:else if item.icon === "faCirclePlay"}
+          <FontAwesomeIcon icon={faCirclePlay} />
+        {:else if item.icon === "faPaperclip"}
+          <FontAwesomeIcon icon={faPaperclip} />
+        {/if}
         <div class="font-semibold dark:text-white">{item.name}</div>
         <span class="text-sm font-light text-gray-500 capitalize"
           >{item.help}</span
@@ -50,7 +74,10 @@
       >talk to sales</NavLi
     >
     <NavLi
-      ><GradientButton href="/login" color="blue" pill>Login</GradientButton
+      ><GradientButton
+        href="https://scheduleforward.com/login"
+        color="blue"
+        pill>Login</GradientButton
       ></NavLi
     >
   </NavUl>

@@ -45,13 +45,15 @@
           learn more
         </h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4 uppercase" href="/"
+          <FooterLink liClass="mb-4 uppercase" href="/videos"
             >video library</FooterLink
           >
           <FooterLink liClass="mb-4 uppercase" href="/reviews"
             >reviews</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase" href="/">articles</FooterLink>
+          <FooterLink liClass="mb-4 uppercase" href="/articles"
+            >articles</FooterLink
+          >
         </FooterLinkGroup>
       </div>
       <div class="flex flex-col text-center">
@@ -65,7 +67,7 @@
           <FooterLink liClass="mb-4 uppercase" href="/contact"
             >contact us</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink>
+          <!-- <FooterLink liClass="mb-4 uppercase" href="/">FAQs</FooterLink> -->
         </FooterLinkGroup>
       </div>
     </div>
