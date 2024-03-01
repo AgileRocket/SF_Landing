@@ -28,7 +28,7 @@
 
   <div class="container flex flex-col gap-y-8">
     <p
-      class="text-center text-xs md:text-sm md:px-16 lg:px-48 xl:px-64 lg:my-8"
+      class="text-center text-xs md:text-sm lg:text-lg md:px-16 lg:px-48 xl:px-64 lg:my-8"
     >
       We are committed to premium user experiences at affordable rates.
       Cutting-Edge & Simple. <b>Never satisfied; always improving.</b>
