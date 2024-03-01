@@ -4,7 +4,7 @@
   import CustomNavbar from "$lib/components/CustomNavbar.svelte";
   import CustomFooter from "$lib/components/CustomFooter.svelte";
 
-  $: isHomePage = $page.url.pathname === "/"; // Check if the current page is the home page
+  $: isHomePage = $page.url.pathname === "/home"; // Check if the current page is the home page
 </script>
 
 <header class="container z-10">

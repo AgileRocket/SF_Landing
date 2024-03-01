@@ -21,7 +21,7 @@
       Featured
     </h2>
     <section class="flex h-auto w-100 mb-8">
-      <a class="article-card md:grid-cols-12" href="/articles/article_1">
+      <a class="article-card md:grid-cols-12" href="/home/articles/article_1">
         <div class="col-span-6">
           <img
             class="rounded-t-2xl md:rounded-2xl"
@@ -77,7 +77,7 @@
     <section
       class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8"
     >
-      <a href="/articles/article_2" class="article-card">
+      <a href="/home/articles/article_2" class="article-card">
         <div class="col-span-6">
           <img
             class="rounded-t-2xl md:rounded-2xl"
@@ -109,7 +109,7 @@
         </div>
         <a
           class="featured-info col-span-6 flex flex-col justify-evenly p-2"
-          href="/articles"
+          href="/home/articles"
         >
           <p class="text-xs text-primary-light">March 2024</p>
           <h5 class="mb-2 text-lg font-semibold tracking-tight text-gray-900">
@@ -118,7 +118,7 @@
           <p class="mb-3 font-normal text-gray-700 text-sm leading-tight">
             Tips for Optimal Employee Work-Life Scheduling
           </p>
-          <Button class="bg-primary w-fit" href="/articles/article_3">
+          <Button class="bg-primary w-fit" href="/home/articles/article_3">
             Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
           </Button>
         </a>
@@ -134,7 +134,7 @@
         </div>
         <a
           class="featured-info col-span-6 flex flex-col justify-evenly p-2"
-          href="/articles"
+          href="/home/articles"
         >
           <p class="text-xs text-primary-light">April 2024</p>
           <h5 class="mb-2 text-lg font-semibold tracking-tight text-gray-900">
@@ -143,7 +143,7 @@
           <p class="mb-3 font-normal text-gray-700 text-sm leading-tight">
             Success Stories and Best Practices with ScheduleForward
           </p>
-          <Button class="bg-primary w-fit" href="/articles/article_4">
+          <Button class="bg-primary w-fit" href="/home/articles/article_4">
             Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
           </Button>
         </a>

@@ -9,31 +9,31 @@ export const menuResources = writable([
     },
     {
       name: "Pricing",
-      href: "/pricing",
+      href: "/home/pricing",
       help: "Competitive and manageable cost.",
       icon: "faTag"
     },
     {
       name: "About Us",
-      href: "/about",
+      href: "/home/about",
       help: "Learn about who we are and why we're here.",
       icon: "faCircleInfo"
     },
     {
       name: "Reviews",
-      href: "/reviews",
+      href: "/home/reviews",
       help: "See what some of our clients are saying.",
       icon: "faComment"
     },
     {
       name: "Video Library",
-      href: "/videos",
+      href: "/home/videos",
       help: "On Demand Access for users and admins.",
       icon: "faCirclePlay"
     },
     {
       name: "Articles",
-      href: "/articles",
+      href: "/home/articles",
       help: "Explore valuable insights on various scheduling topics.",
       icon: "faPaperclip"
     },

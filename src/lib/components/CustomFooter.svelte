@@ -27,13 +27,13 @@
         class="flex flex-col justify-center items-center text-center md:text-start"
       >
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4 uppercase text-accent" href="/"
+          <FooterLink liClass="mb-4 uppercase text-accent" href="/home"
             >try it!</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase text-accent" href="/pricing"
+          <FooterLink liClass="mb-4 uppercase text-accent" href="/home/pricing"
             >pricing</FooterLink
           >
-          <FooterLink liClass="mb-4 uppercase text-accent" href="/contact"
+          <FooterLink liClass="mb-4 uppercase text-accent" href="/home/contact"
             >talk to sales</FooterLink
           >
         </FooterLinkGroup>

@@ -173,7 +173,7 @@
               </div>
               <a
                 class="featured-info col-span-6 flex flex-col justify-evenly p-2"
-                href="/articles"
+                href="/home/articles"
               >
                 <h2
                   class="mb-2 text-lg font-semibold tracking-tight text-gray-900"
@@ -202,7 +202,7 @@
               </div>
               <a
                 class="featured-info col-span-6 flex flex-col justify-evenly p-2"
-                href="/articles"
+                href="/home/articles"
               >
                 <h2
                   class="mb-2 text-lg font-semibold tracking-tight text-gray-900"

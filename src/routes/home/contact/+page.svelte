@@ -84,7 +84,7 @@
           <p>
             I agree with the <a
               class="text-accent hover:underline"
-              href="/contact">terms and conditions</a
+              href="/home/contact">terms and conditions</a
             >.
           </p>
         </Checkbox>
