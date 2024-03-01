@@ -30,7 +30,7 @@
     </div>
     <div class="px-6 lg:contents">
       <div
-        class="mx-auto max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-4 lg:mr-0 lg:w-full lg:max-w-xl lg:flex-none xl:w-1/2"
+        class="mx-auto max-w-2xl pb-24 lg:pt-12 sm:pb-32 sm:pt-20 lg:ml-4 lg:mr-0 lg:w-full lg:max-w-xl lg:flex-none xl:w-1/2"
       >
         <div class="my-6">
           <div
