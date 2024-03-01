@@ -84,13 +84,13 @@
         </a>
       {/each}
       <a
-        href="/contact"
+        href="/home/contact"
         class="text-green-500 hover:bg-primary hover:text-white block rounded-md px-3 py-2 text-xl font-bold"
         on:click={toggleMobileMenu}
         >talk to sales
       </a>
       <Button
-        href="/"
+        href="/home"
         color="blue"
         class="rounded-2xl uppercase text-white w-full mx-auto"
         on:click={toggleMobileMenu}>login</Button

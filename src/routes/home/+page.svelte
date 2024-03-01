@@ -558,7 +558,7 @@
             </figcaption>
           </figure>
           <a
-            href="/reviews"
+            href="/home/reviews"
             class="mb-6 mx-auto text-xs sm:px-16 capitalize text-accent underline"
             >see more testimonials</a
           >

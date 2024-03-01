@@ -28,7 +28,7 @@
   let inputValue = "";
   let filteredSearchVideos: any = [];
 
-  const handleDropdown = (e: {
+  const handleDropdown: any = (e: {
     preventDefault: () => void;
     target: { value: number };
   }) => {
